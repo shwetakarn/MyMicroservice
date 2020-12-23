@@ -1,0 +1,47 @@
+{
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/api/account/balance",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 60243
+          }
+        ],
+        "UpstreamPathTemplate": "/account/balance",
+        "UpstreamHttpMethod": [ "Get" ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        }
+      },
+      {
+        "DownstreamPathTemplate": "/api/user/Register",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 54203
+          }
+        ],
+        "UpstreamPathTemplate": "/user/Register",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/user/authenticate",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 54203
+          }
+        ],
+        "UpstreamPathTemplate": "/user/authenticate",
+        "UpstreamHttpMethod": [ "Post" ]
+      }
+    ],
+    "GlobalConfiguration": {
+      "UseServiceDiscovery": false
+    }
+}
